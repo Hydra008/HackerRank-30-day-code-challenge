@@ -1,5 +1,3 @@
-import java.util.*;
-import java.io.*;
 //Write your code here
 class Calculator {
     Calculator(){
@@ -11,9 +9,15 @@ class Calculator {
             throw new Exception("n and p should be non-negative");
         }
         else {
-            int result=1;
-            for(int i =0;i<p;i++){
-                result = result*n;            
+            int result =1;
+            if(p==1){
+                result = result*n;
+            }
+            else if(p==0){
+                result = 1;
+            }
+            else{
+                result = n*power(n,p-1);
             }
             return result;
         }
